@@ -1,5 +1,6 @@
-using MvvmCross.Core.ViewModels;
-using MvvmCross.Platform.IoC;
+using DailyGarfield.Touch.ViewModels;
+using MvvmCross.IoC;
+using MvvmCross.ViewModels;
 
 namespace DailyGarfield.Touch
 {
@@ -12,7 +13,7 @@ namespace DailyGarfield.Touch
                 .AsInterfaces()
                 .RegisterAsLazySingleton();
 
-            RegisterAppStart<ViewModels.FirstViewModel>();
+            RegisterAppStart<FirstViewModel>();
         }
     }
 }

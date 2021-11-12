@@ -1,31 +1,21 @@
-using MvvmCross.iOS.Platform;
 using UIKit;
 using Foundation;
-using MvvmCross.iOS.Views.Presenters;
-using MvvmCross.Platform;
-using MvvmCross.Core.ViewModels;
+using MvvmCross.Platforms.Ios.Core;
+using MvvmCross.Platforms.Ios.Presenters;
+using MvvmCross;
+using MvvmCross.ViewModels;
 
 namespace DailyGarfield.Touch
 {
     [Register("AppDelegate")]
-    public partial class AppDelegate : MvxApplicationDelegate
+    public partial class AppDelegate : MvxApplicationDelegate<Setup, App>
     {
-        private UIWindow _window;
-
-        public override bool FinishedLaunching(UIApplication app, NSDictionary options)
+        public override bool FinishedLaunching(UIApplication application, NSDictionary launchOptions)
         {
-            _window = new UIWindow(UIScreen.MainScreen.Bounds);
+            var result = base.FinishedLaunching(application, launchOptions);
+            
 
-            var presenter = new MvxIosViewPresenter(this, _window);
-            var setup = new Setup(this, presenter);
-            setup.Initialize();
-
-            var startup = Mvx.Resolve<IMvxAppStart>();
-            startup.Start();
-
-            _window.MakeKeyAndVisible();
-
-            return true;
+            return result;
         }
     }
 }

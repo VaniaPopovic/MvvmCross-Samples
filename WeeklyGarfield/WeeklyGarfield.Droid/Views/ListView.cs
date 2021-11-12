@@ -1,11 +1,11 @@
 using Android.App;
 using Android.OS;
-using MvvmCross.Droid.Views;
 using DailyDilbert.Droid;
+using MvvmCross.Platforms.Android.Views;
 
 namespace DailyGarfield.Droid.Views
 {
-    [Activity(Label = "View for ListViewModel")]
+    [Activity(Label = "View for ListViewModel", Theme = "@style/AppTheme")]
     public class ListView : MvxActivity
     {
         protected override void OnCreate(Bundle bundle)

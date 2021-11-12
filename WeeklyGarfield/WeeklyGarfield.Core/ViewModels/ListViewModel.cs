@@ -1,16 +1,20 @@
+using MvvmCross.Commands;
+using MvvmCross.Navigation;
+using MvvmCross.ViewModels;
 using System;
 using System.Collections.Generic;
-using MvvmCross.Core.ViewModels;
 
 namespace DailyGarfield.Core.ViewModels
 {
     public class ListViewModel : MvxViewModel
     {
         private readonly IGarfieldService _GarfieldService;
+        private readonly IMvxNavigationService _navigationService;
 
-        public ListViewModel(IGarfieldService GarfieldService)
+        public ListViewModel(IGarfieldService GarfieldService, IMvxNavigationService navigationService)
         {
             _GarfieldService = GarfieldService;
+            _navigationService = navigationService;
         }
 
         public override void Start()
@@ -60,7 +64,8 @@ namespace DailyGarfield.Core.ViewModels
 
         private void DoSelectItem(GarfieldItem item)
         {
-            ShowViewModel<DetailViewModel>(item);
+            _navigationService.Navigate<DetailViewModel>();
+            //ShowViewModel<DetailViewModel>(item);
         }
     }
 }

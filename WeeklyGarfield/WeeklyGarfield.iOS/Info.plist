@@ -21,13 +21,13 @@
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
 	<key>MinimumOSVersion</key>
-	<string>5.1.1</string>
+	<string>10.0</string>
 	<key>CFBundleDisplayName</key>
 	<string>Garfield</string>
 	<key>CFBundleIdentifier</key>
 	<string>com.mvvmcross.Garfield</string>
 	<key>CFBundleVersion</key>
-	<string>1</string>
+	<string>1.0</string>
 	<key>NSMainNibFile</key>
 	<string></string>
 	<key>NSMainNibFile~ipad</key>
@@ -40,5 +40,9 @@
 	</array>
 	<key>MKDirectionsApplicationSupportedModes</key>
 	<array/>
+	<key>CFBundleShortVersionString</key>
+	<string>1.0</string>
+	<key>UIStatusBarStyle</key>
+	<string>UIStatusBarStyleLightContent</string>
 </dict>
 </plist>

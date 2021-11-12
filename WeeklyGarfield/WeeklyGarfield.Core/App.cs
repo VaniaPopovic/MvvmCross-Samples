@@ -1,6 +1,6 @@
-using DailyGarfield.Core.ViewModels;
-using MvvmCross.Core.ViewModels;
-using MvvmCross.Platform.IoC;
+using MvvmCross.IoC;
+using MvvmCross.ViewModels;
+using StarWarsSample.Core;
 
 namespace DailyGarfield.Core
 {
@@ -13,7 +13,7 @@ namespace DailyGarfield.Core
                 .AsInterfaces()
                 .RegisterAsLazySingleton();
 
-            RegisterAppStart<ListViewModel>();
+             RegisterCustomAppStart<AppStart>();
         }
     }
 }

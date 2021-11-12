@@ -1,4 +1,6 @@
-using MvvmCross.Core.ViewModels;
+
+
+using MvvmCross.ViewModels;
 
 namespace DailyGarfield.Core.ViewModels
 {

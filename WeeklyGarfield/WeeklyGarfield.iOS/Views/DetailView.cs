@@ -1,15 +1,14 @@
 using DailyGarfield.Core.ViewModels;
 using System;
-using MvvmCross.iOS.Views;
 using UIKit;
-using MvvmCross.Binding.iOS.Views;
 using MvvmCross.Binding.BindingContext;
+using MvvmCross.Platforms.Ios.Views;
 
 namespace DailyGarfield.Touch
 {
     public partial class DetailView : MvxViewController
     {
-        private MvxImageViewLoader _loader;
+        //private MvxImageViewLoader _loader;
 
         private static bool UserInterfaceIdiomIsPhone
         {
@@ -19,7 +18,7 @@ namespace DailyGarfield.Touch
         public DetailView()
             : base(UserInterfaceIdiomIsPhone ? "DetailView_iPhone" : "DetailView_iPad", null)
         {
-            _loader = new MvxImageViewLoader(() => this.StripImage);
+            //_loader = new MvxImageViewLoader(() => this.StripImage);
         }
 
         public override void DidReceiveMemoryWarning()
@@ -38,7 +37,7 @@ namespace DailyGarfield.Touch
             StripImage.Transform = CoreGraphics.CGAffineTransform.MakeRotation((float)Math.PI / 2);
 
             // Perform any additional setup after loading the view, typically from a nib.
-            this.CreateBinding(_loader).To<DetailViewModel>(vm => vm.Item.StripUrl).Apply();
+            //this.CreateBinding(_loader).To<DetailViewModel>(vm => vm.Item.StripUrl).Apply();
             this.CreateBinding().For(p => p.Title).To<DetailViewModel>(vm => vm.Item.Title).Apply();
         }
     }

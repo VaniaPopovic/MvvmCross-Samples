@@ -1,7 +1,7 @@
 using DailyGarfield.Core.ViewModels;
-using MvvmCross.iOS.Views;
-using MvvmCross.Binding.iOS.Views;
 using MvvmCross.Binding.BindingContext;
+using MvvmCross.Platforms.Ios.Binding.Views;
+using MvvmCross.Platforms.Ios.Views;
 using UIKit;
 
 namespace DailyGarfield.Touch

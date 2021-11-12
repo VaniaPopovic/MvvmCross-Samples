@@ -6,6 +6,6 @@ namespace ApiExamples.Core
 {
     public static class Logs
     {
-        public static IMvxLog Instance { get; } = Mvx.Resolve<IMvxLogProvider>().GetLogFor("ApiExamples");
+        public static IMvxLog Instance { get; } = Mvx.IoCProvider.Resolve<IMvxLogProvider>().GetLogFor("ApiExamples");
     }
 }

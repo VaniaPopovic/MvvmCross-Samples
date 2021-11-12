@@ -5,7 +5,7 @@ using MvvmCross.Platforms.Android.Views;
 
 namespace ApiExamples.Droid.Views
 {
-    [Activity(Label = "Api examples")]
+    [Activity(Label = "Api examples", Theme = "@style/AppTheme")]
     public class FirstView : MvxActivity
     {
         protected override void OnCreate(Bundle bundle)
@@ -15,7 +15,7 @@ namespace ApiExamples.Droid.Views
         }
     }
 
-    [Activity(NoHistory = true)]
+    [Activity(NoHistory = true, Theme = "@style/AppTheme")]
     public class DateTimeView : MvxActivity
     {
         protected override void OnCreate(Bundle bundle)
@@ -25,7 +25,7 @@ namespace ApiExamples.Droid.Views
         }
     }
 
-    [Activity(NoHistory = true)]
+    [Activity(NoHistory = true, Theme = "@style/AppTheme")]
     public class TimeView : MvxActivity
     {
         protected override void OnCreate(Bundle bundle)
@@ -35,7 +35,7 @@ namespace ApiExamples.Droid.Views
         }
     }
 
-    [Activity(NoHistory = true)]
+    [Activity(NoHistory = true, Theme = "@style/AppTheme")]
     public class SpinnerView : MvxActivity
     {
         protected override void OnCreate(Bundle bundle)
@@ -45,7 +45,7 @@ namespace ApiExamples.Droid.Views
         }
     }
 
-    [Activity(NoHistory = true)]
+    [Activity(NoHistory = true, Theme = "@style/AppTheme")]
     public class ListView : MvxActivity
     {
         protected override void OnCreate(Bundle bundle)
@@ -55,7 +55,7 @@ namespace ApiExamples.Droid.Views
         }
     }
 
-    [Activity(NoHistory = true)]
+    [Activity(NoHistory = true, Theme = "@style/AppTheme")]
     public class LinearLayoutView : MvxActivity
     {
         protected override void OnCreate(Bundle bundle)
@@ -65,7 +65,7 @@ namespace ApiExamples.Droid.Views
         }
     }
 
-    [Activity(NoHistory = true)]
+    [Activity(NoHistory = true, Theme = "@style/AppTheme")]
     public class RelativeView : MvxActivity
     {
         protected override void OnCreate(Bundle bundle)
@@ -75,7 +75,7 @@ namespace ApiExamples.Droid.Views
         }
     }
 
-    [Activity(NoHistory = true)]
+    [Activity(NoHistory = true, Theme = "@style/AppTheme")]
     public class TextView : MvxActivity
     {
         protected override void OnCreate(Bundle bundle)
@@ -85,7 +85,7 @@ namespace ApiExamples.Droid.Views
         }
     }
 
-    [Activity(NoHistory = true)]
+    [Activity(NoHistory = true, Theme = "@style/AppTheme")]
     public class SeekView : MvxActivity
     {
         protected override void OnCreate(Bundle bundle)
@@ -95,7 +95,7 @@ namespace ApiExamples.Droid.Views
         }
     }
 
-    [Activity(NoHistory = true)]
+    [Activity(NoHistory = true, Theme = "@style/AppTheme")]
     public class ContainsSubView : MvxActivity
     {
         protected override void OnCreate(Bundle bundle)
@@ -105,7 +105,7 @@ namespace ApiExamples.Droid.Views
         }
     }
 
-    [Activity(NoHistory = true)]
+    [Activity(NoHistory = true, Theme = "@style/AppTheme")]
     public class ConvertThisView : MvxActivity
     {
         protected override void OnCreate(Bundle bundle)
@@ -115,7 +115,7 @@ namespace ApiExamples.Droid.Views
         }
     }
 
-    [Activity(NoHistory = true)]
+    [Activity(NoHistory = true, Theme = "@style/AppTheme")]
     public class ObservableCollectionView : MvxActivity
     {
         protected override void OnCreate(Bundle bundle)
@@ -125,7 +125,7 @@ namespace ApiExamples.Droid.Views
         }
     }
 
-    [Activity(NoHistory = true)]
+    [Activity(NoHistory = true, Theme = "@style/AppTheme")]
     public class ObservableDictionaryView : MvxActivity
     {
         protected override void OnCreate(Bundle bundle)
@@ -135,7 +135,7 @@ namespace ApiExamples.Droid.Views
         }
     }
 
-    [Activity(NoHistory = true)]
+    [Activity(NoHistory = true, Theme = "@style/AppTheme")]
     public class WithErrorsView : MvxActivity
     {
         protected override void OnCreate(Bundle bundle)
@@ -145,7 +145,7 @@ namespace ApiExamples.Droid.Views
         }
     }
 
-    [Activity(NoHistory = true)]
+    [Activity(NoHistory = true, Theme = "@style/AppTheme")]
     public class IfView : MvxActivity
     {
         protected override void OnCreate(Bundle bundle)
@@ -155,7 +155,7 @@ namespace ApiExamples.Droid.Views
         }
     }
 
-    [Activity(NoHistory = true)]
+    [Activity(NoHistory = true, Theme = "@style/AppTheme")]
     public class MathsView : MvxActivity
     {
         protected override void OnCreate(Bundle bundle)
@@ -165,7 +165,7 @@ namespace ApiExamples.Droid.Views
         }
     }
 
-    [Activity(NoHistory = true)]
+    [Activity(NoHistory = true, Theme = "@style/AppTheme")]
     public class RadioGroupView : MvxActivity
     {
         protected override void OnCreate(Bundle bundle)
@@ -183,7 +183,7 @@ namespace ApiExamples.Droid.Views
         }
     }
 
-    [Activity(NoHistory = true)]
+    [Activity(NoHistory = true, Theme = "@style/AppTheme")]
     public class RatingBarView : MvxActivity
     {
         protected override void OnCreate(Bundle bundle)
@@ -193,7 +193,7 @@ namespace ApiExamples.Droid.Views
         }
     }
 
-    [Activity(NoHistory = true)]
+    [Activity(NoHistory = true, Theme = "@style/AppTheme")]
     public class CommandView : MvxActivity
     {
         protected override void OnCreate(Bundle bundle)

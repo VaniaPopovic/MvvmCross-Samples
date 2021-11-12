@@ -38,22 +38,23 @@
     android:layout_height="wrap_content"
     android:text="Do the errors disappear when you clear them?"
     />
-  <LinearLayout
-    android:layout_width="fill_parent"
-    android:layout_height="wrap_content"
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
     >
-  <TextView
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="Remaining errors: "
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Remaining errors: "
     />
-  <TextView
-    android:layout_width="fill_parent"
-    android:layout_height="wrap_content"
-    android:textColor="#ff0000"
-    local:MvxBind="Text Errors.Count;Visible Errors.Count"
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#ff0000"
+            local:MvxBind="Text Errors.Count;Visible Errors.Count"
       />
-  </LinearLayout>
+    </LinearLayout>
   <Button
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"

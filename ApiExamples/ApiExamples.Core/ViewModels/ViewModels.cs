@@ -24,10 +24,11 @@ namespace ApiExamples.Core.ViewModels
     public class FirstViewModel
         : MvxViewModel
     {
-        private readonly Lazy<IMvxNavigationService> _navigationService = new Lazy<IMvxNavigationService>(Mvx.Resolve<IMvxNavigationService>);
+        private readonly IMvxNavigationService _navigationService;
 
-        public FirstViewModel(IAllTestsService service)
+        public FirstViewModel(IAllTestsService service, IMvxNavigationService navigationService)
         {
+            _navigationService = navigationService;
             Tests = service.All;
         }
 
@@ -41,14 +42,19 @@ namespace ApiExamples.Core.ViewModels
 
         public ICommand GotoTestCommand
         {
-            get { return new MvxAsyncCommand<Type>(async type => await _navigationService.Value.Navigate(type)); }
+            get { return new MvxAsyncCommand<Type>(async type => await _navigationService.Navigate(type)); }
         }
     }
 
     public abstract class TestViewModel
         : MvxViewModel
     {
-        private readonly Lazy<IMvxNavigationService> _navigationService = new Lazy<IMvxNavigationService>(Mvx.Resolve<IMvxNavigationService>);
+        private readonly IMvxNavigationService _navigationService;
+
+        public TestViewModel(IMvxNavigationService navigationService)
+        {
+            _navigationService = navigationService;
+        }
 
         public ICommand NextCommand
         {
@@ -56,12 +62,12 @@ namespace ApiExamples.Core.ViewModels
             {
                 return new MvxAsyncCommand(async () =>
                     {
-                        var all = Mvx.Resolve<IAllTestsService>();
+                        var all = Mvx.IoCProvider.Resolve<IAllTestsService>();
                         var next = all.NextViewModelType(this);
                         if (next == null)
-                            await _navigationService.Value.Close(this);
+                            await _navigationService.Close(this);
                         else
-                            await _navigationService.Value.Navigate(next);
+                            await _navigationService.Navigate(next);
                     });
             }
         }
@@ -71,6 +77,12 @@ namespace ApiExamples.Core.ViewModels
         : TestViewModel
     {
         private DateTime _property = DateTime.Now;
+        private readonly IMvxNavigationService _navigationService;
+
+        public DateTimeViewModel(IMvxNavigationService navigationService) : base(navigationService)
+        {
+            _navigationService = navigationService;
+        }
 
         public DateTime Property
         {
@@ -83,6 +95,10 @@ namespace ApiExamples.Core.ViewModels
         : TestViewModel
     {
         private TimeSpan _property = DateTime.Now.TimeOfDay;
+        private readonly IMvxNavigationService _navigationService;
+        public TimeViewModel(IMvxNavigationService navigationService) : base(navigationService)
+        {
+        }
 
         public TimeSpan Property
         {
@@ -94,6 +110,7 @@ namespace ApiExamples.Core.ViewModels
     public class SpinnerViewModel
         : TestViewModel
     {
+        private readonly IMvxNavigationService _navigationService;
         public class Thing
         {
             public Thing(string caption)
@@ -140,6 +157,10 @@ namespace ApiExamples.Core.ViewModels
 
         private Thing _selectedItem = new Thing("Three");
 
+        public SpinnerViewModel(IMvxNavigationService navigationService) : base(navigationService)
+        {
+        }
+
         public Thing SelectedItem
         {
             get { return _selectedItem; }
@@ -150,6 +171,9 @@ namespace ApiExamples.Core.ViewModels
     public abstract class BaseListTestViewModel
         : TestViewModel
     {
+        protected BaseListTestViewModel(IMvxNavigationService navigationService) : base(navigationService)
+        {
+        }
         private ObservableCollection<string> _items = new ObservableCollection<string>()
         {
             "One", "Two", "Three"
@@ -162,6 +186,8 @@ namespace ApiExamples.Core.ViewModels
         }
 
         private string _selected;
+
+    
 
         public string Selected
         {
@@ -192,6 +218,10 @@ namespace ApiExamples.Core.ViewModels
     {
         private int i = 0;
 
+        public ListViewModel(IMvxNavigationService navigationService) : base(navigationService)
+        {
+        }
+
         public ICommand Hello
         {
             get { return new MvxCommand(() => Logs.Instance.Trace("Hello " + ++i)); }
@@ -199,14 +229,26 @@ namespace ApiExamples.Core.ViewModels
     }
 
     public class LinearLayoutViewModel : BaseListTestViewModel
-    { }
+    {
+        public LinearLayoutViewModel(IMvxNavigationService navigationService) : base(navigationService)
+        {
+        }
+    }
 
     public class RelativeViewModel : BaseListTestViewModel
-    { }
+    {
+        public RelativeViewModel(IMvxNavigationService navigationService) : base(navigationService)
+        {
+        }
+    }
 
     public class ObservableCollectionViewModel : TestViewModel
     {
         private ObservableCollection<string> _items;
+
+        public ObservableCollectionViewModel(IMvxNavigationService navigationService) : base(navigationService)
+        {
+        }
 
         public ObservableCollection<string> Items
         {
@@ -267,6 +309,10 @@ namespace ApiExamples.Core.ViewModels
     public class ObservableDictionaryViewModel : TestViewModel
     {
         private ObservableDictionary<string, string> _items;
+
+        public ObservableDictionaryViewModel(IMvxNavigationService navigationService) : base(navigationService)
+        {
+        }
 
         public ObservableDictionary<string, string> Items
         {
@@ -351,7 +397,7 @@ namespace ApiExamples.Core.ViewModels
             set { _acceptTerms = value; RaisePropertyChanged(() => AcceptTerms); Validate(); }
         }
 
-        public WithErrorsViewModel()
+        public WithErrorsViewModel(IMvxNavigationService navigationService) : base(navigationService)
         {
             Validate();
         }
@@ -390,6 +436,10 @@ namespace ApiExamples.Core.ViewModels
 
         private double _doubleProperty = 42.12;
 
+        public TextViewModel(IMvxNavigationService navigationService) : base(navigationService)
+        {
+        }
+
         public double DoubleProperty
         {
             get { return _doubleProperty; }
@@ -400,6 +450,10 @@ namespace ApiExamples.Core.ViewModels
     public class SeekViewModel : TestViewModel
     {
         private double _seekProperty = 12;
+
+        public SeekViewModel(IMvxNavigationService navigationService) : base(navigationService)
+        {
+        }
 
         public double SeekProperty
         {
@@ -447,6 +501,10 @@ namespace ApiExamples.Core.ViewModels
             LastName = "Rubble"
         };
 
+        public ContainsSubViewModel(IMvxNavigationService navigationService) : base(navigationService)
+        {
+        }
+
         public PersonViewModel SecondPerson
         {
             get { return _secondPerson; }
@@ -472,6 +530,10 @@ namespace ApiExamples.Core.ViewModels
     {
         private int _value = 21;
 
+        public ConvertThisViewModel(IMvxNavigationService navigationService) : base(navigationService)
+        {
+        }
+
         public int Value
         {
             get { return _value; }
@@ -491,6 +553,10 @@ namespace ApiExamples.Core.ViewModels
 
         private int _testVal2 = 10;
 
+        public IfViewModel(IMvxNavigationService navigationService) : base(navigationService)
+        {
+        }
+
         public int TestVal2
         {
             get { return _testVal2; }
@@ -509,6 +575,10 @@ namespace ApiExamples.Core.ViewModels
         }
 
         private int _testVal2 = 2;
+
+        public MathsViewModel(IMvxNavigationService navigationService) : base(navigationService)
+        {
+        }
 
         public int TestVal2
         {
@@ -565,6 +635,10 @@ namespace ApiExamples.Core.ViewModels
         }
 
         private Thing _selectedItem = new Thing("Three");
+
+        public RadioGroupViewModel(IMvxNavigationService navigationService) : base(navigationService)
+        {
+        }
 
         public Thing SelectedItem
         {

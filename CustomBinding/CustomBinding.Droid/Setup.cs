@@ -1,8 +1,7 @@
 using Android.Content;
 using CustomBinding.Droid.Controls;
 using MvvmCross.Binding.Bindings.Target.Construction;
-using MvvmCross.Core.ViewModels;
-using MvvmCross.Droid.Platform;
+using MvvmCross.ViewModels;
 
 namespace CustomBinding.Droid
 {

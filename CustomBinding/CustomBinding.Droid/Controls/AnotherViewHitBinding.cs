@@ -1,7 +1,3 @@
-using System;
-using Android.Graphics;
-using MvvmCross.Binding;
-using MvvmCross.Binding.Droid.Target;
 
 namespace CustomBinding.Droid.Controls
 {

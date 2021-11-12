@@ -1,5 +1,7 @@
 using MvvmCross.Core.ViewModels;
+using MvvmCross.IoC;
 using MvvmCross.Platform.IoC;
+using MvvmCross.ViewModels;
 
 namespace CustomBinding.Core
 {
@@ -8,11 +10,16 @@ namespace CustomBinding.Core
         public override void Initialize()
         {
             CreatableTypes()
-                .EndingWith("Service")
-                .AsInterfaces()
-                .RegisterAsLazySingleton();
+               .EndingWith("Service")
+               .AsInterfaces()
+               .RegisterAsLazySingleton();
 
-            RegisterNavigationServiceAppStart<ViewModels.FirstViewModel>();
+            CreatableTypes()
+               .EndingWith("Client")
+               .AsInterfaces()
+               .RegisterAsLazySingleton();
+
+            RegisterCustomAppStart<AppStart>();
         }
     }
 }

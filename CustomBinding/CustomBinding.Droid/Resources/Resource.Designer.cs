@@ -25,52 +25,10 @@ namespace CustomBinding.Droid
 		
 		public static void UpdateIdValues()
 		{
-			global::MvvmCross.Binding.Droid.Resource.Attribute.MvxBind = global::CustomBinding.Droid.Resource.Attribute.MvxBind;
-			global::MvvmCross.Binding.Droid.Resource.Attribute.MvxDropDownItemTemplate = global::CustomBinding.Droid.Resource.Attribute.MvxDropDownItemTemplate;
-			global::MvvmCross.Binding.Droid.Resource.Attribute.MvxGroupItemTemplate = global::CustomBinding.Droid.Resource.Attribute.MvxGroupItemTemplate;
-			global::MvvmCross.Binding.Droid.Resource.Attribute.MvxItemTemplate = global::CustomBinding.Droid.Resource.Attribute.MvxItemTemplate;
-			global::MvvmCross.Binding.Droid.Resource.Attribute.MvxLang = global::CustomBinding.Droid.Resource.Attribute.MvxLang;
-			global::MvvmCross.Binding.Droid.Resource.Attribute.MvxSource = global::CustomBinding.Droid.Resource.Attribute.MvxSource;
-			global::MvvmCross.Binding.Droid.Resource.Attribute.MvxTemplate = global::CustomBinding.Droid.Resource.Attribute.MvxTemplate;
-			global::MvvmCross.Binding.Droid.Resource.Id.MvvmCrossTagId = global::CustomBinding.Droid.Resource.Id.MvvmCrossTagId;
-			global::MvvmCross.Binding.Droid.Resource.Id.MvxBindingTagUnique = global::CustomBinding.Droid.Resource.Id.MvxBindingTagUnique;
-			global::MvvmCross.Binding.Droid.Resource.Styleable.MvxBinding = global::CustomBinding.Droid.Resource.Styleable.MvxBinding;
-			global::MvvmCross.Binding.Droid.Resource.Styleable.MvxBinding_MvxBind = global::CustomBinding.Droid.Resource.Styleable.MvxBinding_MvxBind;
-			global::MvvmCross.Binding.Droid.Resource.Styleable.MvxBinding_MvxLang = global::CustomBinding.Droid.Resource.Styleable.MvxBinding_MvxLang;
-			global::MvvmCross.Binding.Droid.Resource.Styleable.MvxControl = global::CustomBinding.Droid.Resource.Styleable.MvxControl;
-			global::MvvmCross.Binding.Droid.Resource.Styleable.MvxControl_MvxTemplate = global::CustomBinding.Droid.Resource.Styleable.MvxControl_MvxTemplate;
-			global::MvvmCross.Binding.Droid.Resource.Styleable.MvxExpandableListView = global::CustomBinding.Droid.Resource.Styleable.MvxExpandableListView;
-			global::MvvmCross.Binding.Droid.Resource.Styleable.MvxExpandableListView_MvxGroupItemTemplate = global::CustomBinding.Droid.Resource.Styleable.MvxExpandableListView_MvxGroupItemTemplate;
-			global::MvvmCross.Binding.Droid.Resource.Styleable.MvxImageView = global::CustomBinding.Droid.Resource.Styleable.MvxImageView;
-			global::MvvmCross.Binding.Droid.Resource.Styleable.MvxImageView_MvxSource = global::CustomBinding.Droid.Resource.Styleable.MvxImageView_MvxSource;
-			global::MvvmCross.Binding.Droid.Resource.Styleable.MvxListView = global::CustomBinding.Droid.Resource.Styleable.MvxListView;
-			global::MvvmCross.Binding.Droid.Resource.Styleable.MvxListView_MvxDropDownItemTemplate = global::CustomBinding.Droid.Resource.Styleable.MvxListView_MvxDropDownItemTemplate;
-			global::MvvmCross.Binding.Droid.Resource.Styleable.MvxListView_MvxItemTemplate = global::CustomBinding.Droid.Resource.Styleable.MvxListView_MvxItemTemplate;
 		}
 		
 		public partial class Attribute
 		{
-			
-			// aapt resource value: 0x7F010000
-			public const int MvxBind = 2130771968;
-			
-			// aapt resource value: 0x7F010001
-			public const int MvxDropDownItemTemplate = 2130771969;
-			
-			// aapt resource value: 0x7F010002
-			public const int MvxGroupItemTemplate = 2130771970;
-			
-			// aapt resource value: 0x7F010003
-			public const int MvxItemTemplate = 2130771971;
-			
-			// aapt resource value: 0x7F010004
-			public const int MvxLang = 2130771972;
-			
-			// aapt resource value: 0x7F010005
-			public const int MvxSource = 2130771973;
-			
-			// aapt resource value: 0x7F010006
-			public const int MvxTemplate = 2130771974;
 			
 			static Attribute()
 			{
@@ -85,11 +43,8 @@ namespace CustomBinding.Droid
 		public partial class Drawable
 		{
 			
-			// aapt resource value: 0x7F020000
-			public const int Icon = 2130837504;
-			
-			// aapt resource value: 0x7F020001
-			public const int splash = 2130837505;
+			// aapt resource value: 0x7F010000
+			public const int Icon = 2130771968;
 			
 			static Drawable()
 			{
@@ -101,33 +56,14 @@ namespace CustomBinding.Droid
 			}
 		}
 		
-		public partial class Id
-		{
-			
-			// aapt resource value: 0x7F030000
-			public const int MvvmCrossTagId = 2130903040;
-			
-			// aapt resource value: 0x7F030001
-			public const int MvxBindingTagUnique = 2130903041;
-			
-			static Id()
-			{
-				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
-			}
-			
-			private Id()
-			{
-			}
-		}
-		
 		public partial class Layout
 		{
 			
-			// aapt resource value: 0x7F040000
-			public const int FirstView = 2130968576;
+			// aapt resource value: 0x7F020000
+			public const int FirstView = 2130837504;
 			
-			// aapt resource value: 0x7F040001
-			public const int SplashScreen = 2130968577;
+			// aapt resource value: 0x7F020001
+			public const int SplashScreen = 2130837505;
 			
 			static Layout()
 			{
@@ -142,11 +78,11 @@ namespace CustomBinding.Droid
 		public partial class String
 		{
 			
-			// aapt resource value: 0x7F050000
-			public const int ApplicationName = 2131034112;
+			// aapt resource value: 0x7F030000
+			public const int ApplicationName = 2130903040;
 			
-			// aapt resource value: 0x7F050001
-			public const int Hello = 2131034113;
+			// aapt resource value: 0x7F030001
+			public const int Hello = 2130903041;
 			
 			static String()
 			{
@@ -154,78 +90,6 @@ namespace CustomBinding.Droid
 			}
 			
 			private String()
-			{
-			}
-		}
-		
-		public partial class Style
-		{
-			
-			// aapt resource value: 0x7F060000
-			public const int Theme_Splash = 2131099648;
-			
-			static Style()
-			{
-				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
-			}
-			
-			private Style()
-			{
-			}
-		}
-		
-		public partial class Styleable
-		{
-			
-			// aapt resource value: { 0x7F010000,0x7F010004 }
-			public static int[] MvxBinding = new int[] {
-					2130771968,
-					2130771972};
-			
-			// aapt resource value: 0
-			public const int MvxBinding_MvxBind = 0;
-			
-			// aapt resource value: 1
-			public const int MvxBinding_MvxLang = 1;
-			
-			// aapt resource value: { 0x7F010006 }
-			public static int[] MvxControl = new int[] {
-					2130771974};
-			
-			// aapt resource value: 0
-			public const int MvxControl_MvxTemplate = 0;
-			
-			// aapt resource value: { 0x7F010002 }
-			public static int[] MvxExpandableListView = new int[] {
-					2130771970};
-			
-			// aapt resource value: 0
-			public const int MvxExpandableListView_MvxGroupItemTemplate = 0;
-			
-			// aapt resource value: { 0x7F010005 }
-			public static int[] MvxImageView = new int[] {
-					2130771973};
-			
-			// aapt resource value: 0
-			public const int MvxImageView_MvxSource = 0;
-			
-			// aapt resource value: { 0x7F010001,0x7F010003 }
-			public static int[] MvxListView = new int[] {
-					2130771969,
-					2130771971};
-			
-			// aapt resource value: 0
-			public const int MvxListView_MvxDropDownItemTemplate = 0;
-			
-			// aapt resource value: 1
-			public const int MvxListView_MvxItemTemplate = 1;
-			
-			static Styleable()
-			{
-				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
-			}
-			
-			private Styleable()
 			{
 			}
 		}

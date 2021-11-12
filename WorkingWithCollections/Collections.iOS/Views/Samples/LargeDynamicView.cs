@@ -1,6 +1,6 @@
 using Collections.Core.ViewModels.Samples.LargeDynamic;
 
-namespace Collections.Touch
+namespace Collections.iOS
 {
     public class LargeDynamicView : BaseDynamicKittenTableView
     {

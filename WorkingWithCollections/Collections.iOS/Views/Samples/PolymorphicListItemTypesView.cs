@@ -1,13 +1,13 @@
 using Collections.Core.ViewModels.Samples.ListItems;
 using System;
 using System.Collections.Generic;
-using MvvmCross.iOS.Views;
 using UIKit;
 using Foundation;
-using MvvmCross.Binding.iOS.Views;
 using MvvmCross.Binding.BindingContext;
+using MvvmCross.Platforms.Ios.Views;
+using MvvmCross.Platforms.Ios.Binding.Views;
 
-namespace Collections.Touch
+namespace Collections.iOS
 {
     public class PolymorphicListItemTypesView
         : MvxTableViewController

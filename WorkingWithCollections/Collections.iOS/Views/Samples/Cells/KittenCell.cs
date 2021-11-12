@@ -1,8 +1,8 @@
 using System;
-using MvvmCross.Binding.iOS.Views;
 using Foundation;
 using UIKit;
 using CoreGraphics;
+using MvvmCross.Platforms.Ios.Binding.Views;
 
 namespace Collections.Touch
 {

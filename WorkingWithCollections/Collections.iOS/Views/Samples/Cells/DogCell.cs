@@ -1,10 +1,10 @@
 using Collections.Core.ViewModels.Samples.ListItems;
 using System;
-using MvvmCross.Binding.iOS.Views;
 using Foundation;
 using MvvmCross.Binding.BindingContext;
+using MvvmCross.Platforms.Ios.Binding.Views;
 
-namespace Collections.Touch
+namespace Collections.iOS
 {
     [Register("DogCell")]
     public partial class DogCell : MvxTableViewCell

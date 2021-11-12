@@ -1,10 +1,9 @@
 using Collections.Core.ViewModels.Samples.SpecificPositions;
-using MvvmCross.iOS.Views;
-using MvvmCross.Binding.iOS.Views;
 using UIKit;
 using MvvmCross.Binding.BindingContext;
+using MvvmCross.Platforms.Ios.Views;
 
-namespace Collections.Touch
+namespace Collections.iOS
 {
     public partial class SpecificPositionsView : MvxViewController
     {

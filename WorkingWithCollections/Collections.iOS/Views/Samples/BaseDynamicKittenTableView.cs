@@ -1,7 +1,7 @@
 using System;
 using UIKit;
 
-namespace Collections.Touch
+namespace Collections.iOS
 {
     public abstract class BaseDynamicKittenTableView
         : BaseKittenTableView

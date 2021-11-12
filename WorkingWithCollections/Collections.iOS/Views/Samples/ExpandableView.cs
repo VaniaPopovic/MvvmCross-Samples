@@ -1,7 +1,7 @@
 using Collections.Core.ViewModels.Samples.Expandable;
 using MvvmCross.Binding.BindingContext;
 
-namespace Collections.Touch
+namespace Collections.iOS
 {
     public class ExpandableView : BaseExpandableTableView
     {

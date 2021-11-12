@@ -1,10 +1,10 @@
 using System.Collections.Generic;
-using MvvmCross.iOS.Views;
-using MvvmCross.Binding.iOS.Views;
 using Foundation;
 using UIKit;
 using MvvmCross.Binding.BindingContext;
-using MvvmCross.iOS.Views.Presenters.Attributes;
+using MvvmCross.Platforms.Ios.Presenters.Attributes;
+using MvvmCross.Platforms.Ios.Views;
+using MvvmCross.Platforms.Ios.Binding.Views;
 
 namespace Collections.Touch
 {

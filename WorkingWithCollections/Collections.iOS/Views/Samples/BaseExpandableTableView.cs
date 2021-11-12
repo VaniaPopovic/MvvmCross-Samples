@@ -1,12 +1,9 @@
-﻿using System.Collections.Generic;
-using MvvmCross.iOS.Views;
-using UIKit;
+﻿using UIKit;
 using Foundation;
-using MvvmCross.Binding.BindingContext;
 using System;
-using MvvmCross.iOS.Support.Views;
+using MvvmCross.Platforms.Ios.Views;
 
-namespace Collections.Touch
+namespace Collections.iOS
 {
     public class BaseExpandableTableView : MvxTableViewController
     {

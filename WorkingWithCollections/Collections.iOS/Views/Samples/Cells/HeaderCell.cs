@@ -1,10 +1,10 @@
 ﻿using System;
 
 using Foundation;
+using MvvmCross.Platforms.Ios.Binding.Views;
 using UIKit;
-using MvvmCross.Binding.iOS.Views;
 
-namespace Collections.Touch
+namespace Collections.iOS
 {
 	public partial class HeaderCell : MvxTableViewCell
 	{

@@ -1,11 +1,10 @@
 using System.Collections.Generic;
-using MvvmCross.iOS.Views;
-using MvvmCross.Binding.iOS.Views;
 using UIKit;
-using Foundation;
 using MvvmCross.Binding.BindingContext;
+using MvvmCross.Platforms.Ios.Views;
+using MvvmCross.Platforms.Ios.Binding.Views;
 
-namespace Collections.Touch
+namespace Collections.iOS
 {
     public class BaseKittenTableView
         : MvxTableViewController

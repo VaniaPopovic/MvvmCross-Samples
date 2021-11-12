@@ -8,11 +8,19 @@
 // Project Lead - Stuart Lodge, Cirrious. http://www.cirrious.com - Hire me - I'm worth it!
 
 using Android.App;
-using MvvmCross.Droid.Views;
+using Android.Content.PM;
+using MvvmCross.Platforms.Android.Presenters.Attributes;
+using MvvmCross.Platforms.Android.Views;
 
 namespace Collections.Droid
 {
-    [Activity(Label = "Collection", MainLauncher = true, NoHistory = true, Icon = "@drawable/icon")]
+    [MvxActivityPresentation]
+    [Activity(
+        MainLauncher = true,
+        Icon = "@drawable/icon",
+        Theme = "@style/Theme.Splash",
+        NoHistory = true,
+        ScreenOrientation = ScreenOrientation.Portrait)]
     public class SplashScreenActivity
         : MvxSplashScreenActivity
     {

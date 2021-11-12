@@ -1,10 +1,10 @@
 ﻿using Android.App;
 using Android.Content.PM;
-using MvvmCross.Droid.Views;
+using MvvmCross.Platforms.Android.Views;
 
 namespace Collections.Droid.Views
 {
-    [Activity(Label = "Specific Positions", ScreenOrientation = ScreenOrientation.Portrait)]
+    [Activity(Label = "Specific Positions", ScreenOrientation = ScreenOrientation.Portrait, Theme = "@style/AppTheme")]
     public class SpecificPositionsView : MvxActivity
     {
         protected override void OnViewModelSet()

@@ -7,31 +7,12 @@
 //  
 // Project Lead - Stuart Lodge, Cirrious. http://www.cirrious.com - Hire me - I'm worth it!
 
-using Android.Content;
 using Collections.Core;
-using MvvmCross.Droid.Platform;
-using MvvmCross.Core.ViewModels;
+using MvvmCross.Platforms.Android.Core;
 
 namespace Collections.Droid
 {
-    public class Setup
-        : MvxAndroidSetup
+    public class Setup : MvxAndroidSetup<App>
     {
-        public Setup(Context applicationContext)
-            : base(applicationContext)
-        {
-        }
-
-        protected override IMvxApplication CreateApp()
-        {
-            return new App();
-        }
-
-        protected override void InitializeLastChance()
-        {
-            base.InitializeLastChance();
-            MvvmCross.Plugins.File.PluginLoader.Instance.EnsureLoaded();
-            MvvmCross.Plugins.DownloadCache.PluginLoader.Instance.EnsureLoaded();
-        }
     }
 }

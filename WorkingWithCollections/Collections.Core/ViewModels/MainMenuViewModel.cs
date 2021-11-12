@@ -7,9 +7,10 @@ using Collections.Core.ViewModels.Samples.SpecificPositions;
 using Collections.Core.ViewModels.Samples.Expandable;
 using System.Collections.Generic;
 using System.Windows.Input;
-using MvvmCross.Core.ViewModels;
-using MvvmCross.Core.Navigation;
-using MvvmCross.Platform;
+using MvvmCross.ViewModels;
+using MvvmCross.Navigation;
+using MvvmCross.Commands;
+using MvvmCross;
 
 namespace Collections.Core.ViewModels
 {

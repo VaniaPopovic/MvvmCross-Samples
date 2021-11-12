@@ -1,10 +1,6 @@
-﻿using System;
+﻿using MvvmCross.Commands;
+using System;
 using System.Windows.Input;
-using MvvmCross.Core.ViewModels;
-using MvvmCross.Core.Navigation;
-using Collections.Core.ViewModels.Samples.LargeDynamic;
-
-[assembly: MvxNavigation(typeof(LargeDynamicViewModel), nameof(LargeDynamicViewModel))]
 
 namespace Collections.Core.ViewModels.Samples.LargeDynamic
 {

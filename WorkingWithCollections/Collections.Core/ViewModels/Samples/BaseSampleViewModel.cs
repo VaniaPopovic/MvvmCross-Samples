@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Collections.Core.ViewModels.Samples.ListItems;
-using MvvmCross.Core.Navigation;
-using MvvmCross.Core.ViewModels;
+using MvvmCross.ViewModels;
 
 namespace Collections.Core.ViewModels.Samples
 {

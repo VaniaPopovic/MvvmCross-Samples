@@ -3,13 +3,13 @@ using Android.Content;
 using Android.Content.PM;
 using Android.Views;
 using Collections.Core.ViewModels.Samples.ListItems;
-using MvvmCross.Droid.Views;
-using MvvmCross.Binding.Droid.Views;
-using MvvmCross.Binding.Droid.BindingContext;
+using MvvmCross.Platforms.Android.Views;
+using MvvmCross.Platforms.Android.Binding.Views;
+using MvvmCross.Platforms.Android.Binding.BindingContext;
 
 namespace Collections.Droid.Views
 {
-    [Activity(Label = "Polymorphic Types", ScreenOrientation = ScreenOrientation.Portrait)]
+    [Activity(Label = "Polymorphic Types", ScreenOrientation = ScreenOrientation.Portrait, Theme = "@style/AppTheme")]
     public class PolymorphicListItemTypesView : MvxActivity
     {
         protected override void OnViewModelSet()

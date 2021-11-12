@@ -1,32 +1,29 @@
-using Collections.iOS;
-using MvvmCross.Core.ViewModels;
-using MvvmCross.iOS.Platform;
-using MvvmCross.iOS.Views.Presenters;
-using MvvmCross.Platform.Platform;
+using Collections.Core;
+using MvvmCross;
+using MvvmCross.Base;
+using MvvmCross.Binding.Bindings.Target.Construction;
+using MvvmCross.IoC;
+using MvvmCross.Platforms.Ios.Core;
+using MvvmCross.Plugin.Json;
 using UIKit;
 
-namespace Collections.Touch
+namespace Collections.iOS
 {
-    public class Setup : MvxIosSetup
+    public class Setup : MvxIosSetup<App>
     {
-        public Setup(MvxApplicationDelegate applicationDelegate, UIWindow window)
-            : base(applicationDelegate, window)
+        protected override void InitializeFirstChance()
         {
+            base.InitializeFirstChance();
+
+            Mvx.IoCProvider.RegisterType<IMvxJsonConverter, MvxJsonConverter>();
         }
 
-        public Setup(MvxApplicationDelegate applicationDelegate, IMvxIosViewPresenter presenter)
-            : base(applicationDelegate, presenter)
+        protected override IMvxIocOptions CreateIocOptions()
         {
-        }
-
-        protected override IMvxApplication CreateApp()
-        {
-            return new Core.App();
-        }
-
-        protected override IMvxTrace CreateDebugTrace()
-        {
-            return new DebugTrace();
+            return new MvxIocOptions
+            {
+                PropertyInjectorOptions = MvxPropertyInjectorOptions.MvxInject
+            };
         }
     }
 }

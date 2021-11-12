@@ -1,9 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using Collections.Core.ViewModels.Samples.Expandable;
-using MvvmCross.Core.Navigation;
 
-[assembly: MvxNavigation(typeof(ExpandableViewModel), nameof(ExpandableViewModel))]
 namespace Collections.Core.ViewModels.Samples.Expandable
 {
     public class ExpandableViewModel : BaseSampleViewModel

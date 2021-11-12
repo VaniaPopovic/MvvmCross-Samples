@@ -1,10 +1,10 @@
 ﻿using Android.App;
 using Android.Content.PM;
-using MvvmCross.Droid.Views;
+using MvvmCross.Platforms.Android.Views;
 
 namespace Collections.Droid.Views
 {
-    [Activity(Label = "Small Fixed", ScreenOrientation = ScreenOrientation.Portrait)]
+    [Activity(Label = "Small Fixed", ScreenOrientation = ScreenOrientation.Portrait, Theme = "@style/AppTheme")]
     public class SmallFixedView : MvxActivity
     {
         protected override void OnViewModelSet()

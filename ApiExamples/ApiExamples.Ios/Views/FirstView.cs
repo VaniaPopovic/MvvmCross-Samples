@@ -9,7 +9,7 @@ using MvvmCross.Platforms.Ios.Binding.Views;
 namespace ApiExamples.Ios.Views
 {
     [Register("FirstView")]
-    public class FirstView : MvxTableViewController
+    public class FirstView : MvxTableViewController<FirstViewModel>
     {
         public override void ViewDidLoad()
         {
@@ -202,20 +202,8 @@ namespace ApiExamples.Ios.Views
         }
     }
 
-    [Register("LinearLayoutView")]
-    public class LinearLayoutView : NotTestedTestViewController
-    {
-        // not tested
-    }
-
     [Register("FrameView")]
     public class FrameView : NotTestedTestViewController
-    {
-        // not tested
-    }
-
-    [Register("RelativeView")]
-    public class RelativeView : NotTestedTestViewController
     {
         // not tested
     }

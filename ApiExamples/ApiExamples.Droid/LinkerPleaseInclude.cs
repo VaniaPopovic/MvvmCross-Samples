@@ -2,8 +2,10 @@ using Android.App;
 using Android.Views;
 using Android.Widget;
 using MvvmCross.Binding.BindingContext;
+using MvvmCross.IoC;
 using MvvmCross.Navigation;
 using MvvmCross.ViewModels;
+using MvvmCross.Views;
 using System;
 using System.Collections.Specialized;
 using System.Windows.Input;
@@ -107,9 +109,9 @@ namespace ApiExamples.Droid
             context2.Dispose();
         }
 
-        public void Include(MvxNavigationService service, IMvxViewModelLoader loader)
+        public void Include(MvxNavigationService service, IMvxViewDispatcher dispatcher, IMvxViewModelLoader loader, IMvxIoCProvider ioc)
         {
-            service = new MvxNavigationService(null, loader);
+            service = new MvxNavigationService(null, dispatcher, ioc);
         }
 
         public void Include(ConsoleColor color)

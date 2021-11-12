@@ -4,10 +4,10 @@ using System.Collections.ObjectModel;
 using System.Text.RegularExpressions;
 using System.Windows.Input;
 using ApiExamples.Core.ViewModels.Helpers;
+using Microsoft.Extensions.Logging;
 using MvvmCross;
 using MvvmCross.Commands;
 using MvvmCross.Converters;
-using MvvmCross.Logging;
 using MvvmCross.Navigation;
 using MvvmCross.ViewModels;
 
@@ -95,7 +95,6 @@ namespace ApiExamples.Core.ViewModels
         : TestViewModel
     {
         private TimeSpan _property = DateTime.Now.TimeOfDay;
-        private readonly IMvxNavigationService _navigationService;
         public TimeViewModel(IMvxNavigationService navigationService) : base(navigationService)
         {
         }
@@ -110,7 +109,6 @@ namespace ApiExamples.Core.ViewModels
     public class SpinnerViewModel
         : TestViewModel
     {
-        private readonly IMvxNavigationService _navigationService;
         public class Thing
         {
             public Thing(string caption)
@@ -127,7 +125,7 @@ namespace ApiExamples.Core.ViewModels
 
             public override bool Equals(object obj)
             {
-                var rhs = obj as Thing;
+                Thing rhs = obj as Thing;
                 if (rhs == null)
                     return false;
                 return rhs.Caption == Caption;
@@ -224,21 +222,7 @@ namespace ApiExamples.Core.ViewModels
 
         public ICommand Hello
         {
-            get { return new MvxCommand(() => Logs.Instance.Trace("Hello " + ++i)); }
-        }
-    }
-
-    public class LinearLayoutViewModel : BaseListTestViewModel
-    {
-        public LinearLayoutViewModel(IMvxNavigationService navigationService) : base(navigationService)
-        {
-        }
-    }
-
-    public class RelativeViewModel : BaseListTestViewModel
-    {
-        public RelativeViewModel(IMvxNavigationService navigationService) : base(navigationService)
-        {
+            get { return new MvxCommand(() => Logs.Instance.Log(LogLevel.Trace, "Hello " + ++i)); }
         }
     }
 

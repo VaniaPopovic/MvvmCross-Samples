@@ -1,5 +1,6 @@
 using Android.App;
 using Android.Content.PM;
+using ApiExamples.Core;
 using MvvmCross.Core;
 using MvvmCross.Platforms.Android.Views;
 
@@ -12,12 +13,11 @@ namespace ApiExamples.Droid
         , Theme = "@style/Theme.Splash"
         , NoHistory = true
         , ScreenOrientation = ScreenOrientation.Portrait)]
-    public class SplashScreen : MvxSplashScreenActivity
+    public class SplashScreen : MvxSplashScreenActivity<Setup, App>
     {
         public SplashScreen()
             : base(Resource.Layout.SplashScreen)
         {
-            MvxSetup.RegisterSetupType<Setup>(this.GetType().Assembly);
         }
     }
 }

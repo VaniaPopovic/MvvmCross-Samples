@@ -1,5 +1,6 @@
 using Android.App;
 using Android.OS;
+using ApiExamples.Core.ViewModels;
 using MvvmCross.Converters;
 using MvvmCross.Platforms.Android.Views;
 
@@ -52,26 +53,6 @@ namespace ApiExamples.Droid.Views
         {
             base.OnCreate(bundle);
             SetContentView(Resource.Layout.Test_List);
-        }
-    }
-
-    [Activity(NoHistory = true, Theme = "@style/AppTheme")]
-    public class LinearLayoutView : MvxActivity
-    {
-        protected override void OnCreate(Bundle bundle)
-        {
-            base.OnCreate(bundle);
-            SetContentView(Resource.Layout.Test_LinearLayout);
-        }
-    }
-
-    [Activity(NoHistory = true, Theme = "@style/AppTheme")]
-    public class RelativeView : MvxActivity
-    {
-        protected override void OnCreate(Bundle bundle)
-        {
-            base.OnCreate(bundle);
-            SetContentView(Resource.Layout.Test_Relative);
         }
     }
 

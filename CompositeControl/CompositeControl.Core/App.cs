@@ -1,8 +1,10 @@
-using Cirrious.CrossCore.IoC;
+using MvvmCross.IoC;
+using MvvmCross.ViewModels;
+using StarWarsSample.Core;
 
 namespace CompositeControl.Core
 {
-    public class App : Cirrious.MvvmCross.ViewModels.MvxApplication
+    public class App : MvxApplication
     {
         public override void Initialize()
         {
@@ -11,7 +13,13 @@ namespace CompositeControl.Core
                 .AsInterfaces()
                 .RegisterAsLazySingleton();
 
-            RegisterNavigationServiceAppStart<ViewModels.FirstViewModel>();
+            CreatableTypes()
+                .EndingWith("Client")
+                .AsInterfaces()
+                .RegisterAsLazySingleton();
+
+            // register the appstart object
+            RegisterCustomAppStart<AppStart>();
         }
     }
 }

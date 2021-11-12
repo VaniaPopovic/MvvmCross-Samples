@@ -17,7 +17,7 @@
     <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
     <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
     <AndroidUseLatestPlatformSdk>False</AndroidUseLatestPlatformSdk>
-    <TargetFrameworkVersion>v5.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v12.0</TargetFrameworkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -29,6 +29,10 @@
     <WarningLevel>4</WarningLevel>
     <AndroidUseSharedRuntime>True</AndroidUseSharedRuntime>
     <AndroidLinkMode>None</AndroidLinkMode>
+    <AotAssemblies>false</AotAssemblies>
+    <EnableLLVM>false</EnableLLVM>
+    <AndroidEnableProfiledAot>false</AndroidEnableProfiledAot>
+    <BundleAssemblies>false</BundleAssemblies>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -41,72 +45,29 @@
     <AndroidLinkMode>SdkOnly</AndroidLinkMode>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Cirrious.CrossCore, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\MvvmCross.HotTuna.CrossCore.4.0.0-beta3\lib\MonoAndroid\Cirrious.CrossCore.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Cirrious.CrossCore.Droid, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\MvvmCross.HotTuna.CrossCore.4.0.0-beta3\lib\MonoAndroid\Cirrious.CrossCore.Droid.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Cirrious.MvvmCross, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\MvvmCross.HotTuna.MvvmCrossLibraries.4.0.0-beta3\lib\MonoAndroid\Cirrious.MvvmCross.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Cirrious.MvvmCross.Binding, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\MvvmCross.HotTuna.Binding.4.0.0-beta3\lib\MonoAndroid\Cirrious.MvvmCross.Binding.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Cirrious.MvvmCross.Binding.Droid, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\MvvmCross.HotTuna.Binding.4.0.0-beta3\lib\MonoAndroid\Cirrious.MvvmCross.Binding.Droid.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Cirrious.MvvmCross.Droid, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\MvvmCross.HotTuna.MvvmCrossLibraries.4.0.0-beta3\lib\MonoAndroid\Cirrious.MvvmCross.Droid.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Cirrious.MvvmCross.Localization, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\MvvmCross.HotTuna.CrossCore.4.0.0-beta3\lib\MonoAndroid\Cirrious.MvvmCross.Localization.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="Mono.Android" />
     <Reference Include="Mono.Android.Export" />
     <Reference Include="mscorlib" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Net">
-      <Private>True</Private>
-      <HintPath>..\packages\MvvmCross.PortableSupport.3.0.13-beta4\lib\MonoAndroid16\System.Net.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Windows">
-      <Private>True</Private>
-      <HintPath>..\packages\MvvmCross.PortableSupport.3.0.13-beta4\lib\MonoAndroid16\System.Windows.dll</HintPath>
-    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Xml" />
-    <Reference Include="System.Xml.Serialization">
-      <Private>True</Private>
-      <HintPath>..\packages\MvvmCross.PortableSupport.3.0.13-beta4\lib\MonoAndroid16\System.Xml.Serialization.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DebugTrace.cs" />
+    <Compile Include="Setup.cs" />
+    <Compile Include="MainApplication.cs" />
     <Compile Include="LinkerPleaseInclude.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Setup.cs" />
-    <Compile Include="SplashScreen.cs" />
     <Compile Include="Views\FirstView.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
     <None Include="Resources\AboutResources.txt" />
     <None Include="Assets\AboutAssets.txt" />
     <AndroidResource Include="Resources\Layout\FirstView.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\Layout\Comp_Customer.axml" />
-    <AndroidResource Include="Resources\Layout\SplashScreen.axml" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\Values\Strings.xml" />
@@ -115,16 +76,24 @@
     <AndroidResource Include="Resources\Drawable\Icon.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Properties\AndroidManifest.xml" />
-    <AndroidResource Include="Resources\Values\SplashStyle.xml" />
-    <AndroidResource Include="Resources\Drawable\splash.png" />
-    <Content Include="ToDo-MvvmCross\_ Droid UI.txt" />
+    <None Include="Properties\AndroidManifest.xml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CompositeControl.Core\CompositeControl.Core.csproj">
       <Project>{b243ed88-ae7f-4ff4-9822-8816218e53b9}</Project>
       <Name>CompositeControl.Core</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="MvvmCross">
+      <Version>7.1.2</Version>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\Values\styles.xml">
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+      <SubType>Designer</SubType>
+    </AndroidResource>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
